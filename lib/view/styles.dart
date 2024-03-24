@@ -16,6 +16,8 @@ Color color3 = Color(0xFF265073);
 Color color4 = Color(0xFF5E8CFF);
 Color colorWhite = Color(0xFFF6FFE4);
 
+double paddingaround = 20;
+
 TextStyle nameTitleStyle (BuildContext context, Color color) {
   return TextStyle(
       color: color,
