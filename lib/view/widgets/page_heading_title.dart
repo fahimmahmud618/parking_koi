@@ -4,8 +4,9 @@ import 'package:parking_koi/view/styles.dart';
 
 Widget PageHeadingTitle(BuildContext context, String title, Color itemcolor){
   return Container(
-    margin: EdgeInsets.fromLTRB(20, 10, 20, 10),
+    margin: EdgeInsets.fromLTRB(10, 10, 10, 20),
     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+    // padding: EdgeInsets.all(20),
     decoration: BoxDecoration(
       border: Border(
         bottom: BorderSide(

@@ -11,10 +11,10 @@ double get_screenWidth(BuildContext context){
 }
 
 Color colorbluedark = Color(0xFF265073);
-Color color2 = Color(0xFF59B4C3);
-Color color3 = Color(0xFF265073);
-Color color4 = Color(0xFF5E8CFF);
-Color colorWhite = Color(0xFFF6FFE4);
+Color bgcolor = Color(0xFF265073);
+
+Color colorWhite = Color(0xFFFAFAFA);
+Color itemcolor = Color(0xFFFAFAFA);
 
 double paddingaround = 20;
 
