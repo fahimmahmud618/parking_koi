@@ -22,7 +22,7 @@ Widget PageHeadingTitle(BuildContext context, String title, Color itemcolor){
           color: itemcolor,
           // fontSize: ,
           fontSize: 24*get_scale_factor(context),
-          fontWeight: FontWeight.w800
+          fontWeight: FontWeight.w900
       ),
     ),
   );

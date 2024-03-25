@@ -14,9 +14,26 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return MyAppSafePage(
-        MyAppber(context, "Parking koi", colorbluedark, colorWhite),
-        Container(
-          child: Text("home page"),
+        MyAppBar(context, "Parking koi", colorbluedark, colorWhite),
+        Column(
+          children: [
+            Container(
+              child: Row(
+                children: [
+                  Column(
+                    children: [
+                      Text("test")
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text("test")
+                    ],
+                  )
+                ],
+              )
+            ),
+          ],
         )
     );
   }
