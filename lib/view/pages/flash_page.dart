@@ -18,7 +18,6 @@ class FlashPage extends StatefulWidget {
 class _FlashPageState extends State<FlashPage> {
 
   Future initiateChache() async{
-    print("hi");
     CacheManagerUtils.conditionalCache(
         key: "cache",
         valueType: ValueType.StringValue,

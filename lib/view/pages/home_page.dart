@@ -16,10 +16,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int presentVehicleCount = 26;
-  int carCount = 12;
-  int bikeCount = 4;
-  int truckCount = 2;
+  int? presentVehicleCount ;
+  int? carCount ;
+  int? bikeCount ;
+  int? truckCount;
 
   String? city;
   void set_city(String x){
@@ -32,6 +32,21 @@ class _HomePageState extends State<HomePage> {
 
   void go_to_remove_vehicle_page(){
     Navigator.push(context, MaterialPageRoute(builder: (context)=>RemoveVehicle()));
+  }
+
+  void load_data(){
+    //TODO Sadia: fetch data from DB making requried query
+    //Demo data here
+    presentVehicleCount=26;
+    carCount=12;
+    bikeCount=6;
+    truckCount=2;
+  }
+
+  @override
+  void initState() {
+    load_data();
+    super.initState();
   }
   @override
   Widget build(BuildContext context) {
@@ -76,11 +91,11 @@ class _HomePageState extends State<HomePage> {
                         padding: EdgeInsets.all(8),
                         child: Column(
                           children: [
-                            VehicleTypeInfoShpw(context, carlogo, "Car", carCount),
+                            VehicleTypeInfoShpw(context, carlogo, "Car", carCount!),
                             VehicleTypeInfoShpw(
-                                context, bikelogo, "Car", bikeCount),
+                                context, bikelogo, "Car", bikeCount!),
                             VehicleTypeInfoShpw(
-                                context, trucklogo, "Pickup", truckCount),
+                                context, trucklogo, "Pickup", truckCount!),
                           ],
                         ),
                       ),

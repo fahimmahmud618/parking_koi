@@ -49,7 +49,7 @@ class _AddVehicleState extends State<AddVehicle> {
             vehicleNumber.text;
         print(registrationNUmber);
       });
-    
+
 
   }
 
@@ -62,6 +62,7 @@ class _AddVehicleState extends State<AddVehicle> {
 
   void print_QR(){
     //TODO Mehzabin
+    //TODO Sadia: Save in DB
   }
 
   @override
