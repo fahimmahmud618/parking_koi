@@ -1,5 +1,4 @@
-
-List<Map<String, String>> city=[
+List<Map<String, String>> city = [
   {'key': 'Select', 'value': 'null'},
   {'key': 'ঢাকা-মেট্রো', 'value': 'DHAKA METRO'},
   {'key': 'ফরিদপুর', 'value': 'FARIDPUR'},
@@ -45,7 +44,7 @@ List<Map<String, String>> city=[
   {'key': 'চাঁদপুর', 'value': 'CHANDPUR'},
   {'key': 'চট্টগ্রাম', 'value': 'CHITTAGONG'},
   {'key': 'কুমিল্লা', 'value': 'COMILLA'},
-  {'key': 'কক্সবাজার', 'value': 'COX''S BAZAR'},
+  {'key': 'কক্সবাজার', 'value': 'COX' 'S BAZAR'},
   {'key': 'ফেনী', 'value': 'FENI'},
   {'key': 'খাগড়াছড়ি', 'value': 'KHAGRACHARI'},
   {'key': 'লক্ষ্মীপুর', 'value': 'LAKSHMIPUR'},
@@ -101,4 +100,7 @@ List<Map<String, String>> vehicleClassLetter = [
 ];
 
 List<String> banglaCityNames = city.map((map) => map['key']!).toList();
-List<String> banglaVehicleClassLetter = vehicleClassLetter.map((map) => map['key']!).toList();
+List<String> banglaVehicleClassLetter =
+    vehicleClassLetter.map((map) => map['key']!).toList();
+
+

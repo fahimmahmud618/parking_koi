@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:parking_koi/controller/vehicle_registration_info.dart';
 import 'package:parking_koi/view/styles.dart';
 import 'package:parking_koi/view/widgets/action_button.dart';
+import 'package:parking_koi/view/widgets/alert_dialog.dart';
 import 'package:parking_koi/view/widgets/appbar.dart';
 import 'package:parking_koi/view/widgets/dropdown.dart';
 import 'package:parking_koi/view/widgets/input_text_widget.dart';
@@ -16,8 +17,8 @@ class AddVehicle extends StatefulWidget {
 }
 
 class _AddVehicleState extends State<AddVehicle> {
-  String? cityCode;
-  String? vehicleclassLetter;
+  String cityCode ="Select";
+  String vehicleclassLetter="Select";
   String? registrationNUmber;
   bool registrationNumberMade = false;
   bool isQRGenerated = false;
@@ -37,17 +38,19 @@ class _AddVehicleState extends State<AddVehicle> {
   }
 
   void make_registration() {
-    setState(() {
-      registrationNumberMade = true;
-      registrationNUmber = cityCode! +
-          "-" +
-          vehicleclassLetter! +
-          "\n" +
-          vehicleClassNumber.text +
-          "-" +
-          vehicleNumber.text;
-      print(registrationNUmber);
-    });
+      setState(() {
+        registrationNumberMade = true;
+        registrationNUmber = cityCode! +
+            "-" +
+            vehicleclassLetter! +
+            "\n" +
+            vehicleClassNumber.text +
+            "-" +
+            vehicleNumber.text;
+        print(registrationNUmber);
+      });
+    
+
   }
 
   void generate_QR(){
