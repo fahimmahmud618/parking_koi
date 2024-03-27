@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:parking_koi/view/imageStrings.dart';
+import 'package:parking_koi/view/pages/add_vehicle.dart';
+import 'package:parking_koi/view/pages/remove_vehicle.dart';
 import 'package:parking_koi/view/styles.dart';
 import 'package:parking_koi/view/widgets/appbar.dart';
 import 'package:parking_koi/view/widgets/dropdown.dart';
@@ -19,83 +21,17 @@ class _HomePageState extends State<HomePage> {
   int bikeCount = 4;
   int truckCount = 2;
 
-  List<String> ditem = [
-    'ঢাকা',
-    'ফরিদপুর',
-    'গাজীপুর',
-    'গোপালগঞ্জ',
-    'জামালপুর',
-    'কিশোরগঞ্জ',
-    'মাদারীপুর',
-    'মানিকগঞ্জ',
-    'মুন্সীগঞ্জ',
-    'ময়মনসিংহ',
-    'নারায়ণগঞ্জ',
-    'নরসিংদী',
-    'নেত্রকোনা',
-    'রাজবাড়ী',
-    'শরীয়তপুর',
-    'শেরপুর',
-    'টাঙ্গাইল',
-    'বগুড়া',
-    'জয়পুরহাট',
-    'নওগাঁ',
-    'নাটোর',
-    'নবাবগঞ্জ',
-    'পাবনা',
-    'রাজশাহী',
-    'সিরাজগঞ্জ',
-    'দিনাজপুর',
-    'গাইবান্ধা',
-    'কুড়িগ্রাম',
-    'লালমনিরহাট',
-    'নীলফামারী',
-    'পঞ্চগড়',
-    'রংপুর',
-    'ঠাকুরগাঁও',
-    'বরগুনা',
-    'বরিশাল',
-    'ভোলা',
-    'ঝালকাঠি',
-    'পটুয়াখালী',
-    'পিরোজপুর',
-    'বান্দরবান',
-    'ব্রাহ্মণবাড়িয়া',
-    'চাঁদপুর',
-    'চট্টগ্রাম',
-    'কুমিল্লা',
-    'কক্সবাজার',
-    'ফেনী',
-    'খাগড়াছড়ি',
-    'লক্ষ্মীপুর',
-    'নোয়াখালী',
-    'রাঙ্গামাটি',
-    'হবিগঞ্জ',
-    'মৌলভীবাজার',
-    'সুনামগঞ্জ',
-    'সিলেট',
-    'বাগেরহাট',
-    'চুয়াডাঙ্গা',
-    'যশোর',
-    'ঝিনাইদহ',
-    'খুলনা',
-    'কুষ্টিয়া',
-    'মাগুরা',
-    'মেহেরপুর',
-    'নড়াইল',
-    'সাতক্ষীরা',
-  ];
   String? city;
   void set_city(String x){
     city=x;
     print(city);
   }
   void go_to_add_vehicle_page(){
-
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>AddVehicle()));
   }
 
   void go_to_remove_vehicle_page(){
-
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>RemoveVehicle()));
   }
   @override
   Widget build(BuildContext context) {
@@ -197,7 +133,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            MyDropDown(itemList: ditem, selectedOption: ditem[0], textColor: Colors.black, onChanged: set_city),
           ],
         ));
   }
