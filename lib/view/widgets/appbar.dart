@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:parking_koi/view/pages/history_page.dart';
 import 'package:parking_koi/view/styles.dart';

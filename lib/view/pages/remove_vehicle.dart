@@ -1,7 +1,8 @@
-import 'dart:html';
-
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:parking_koi/model/vehicle_history.dart';
+import 'package:parking_koi/qr/scan.dart';
 import 'package:parking_koi/view/styles.dart';
 import 'package:parking_koi/view/widgets/action_button.dart';
 import 'package:parking_koi/view/widgets/alert_dialog.dart';
@@ -23,9 +24,9 @@ class _RemoveVehicleState extends State<RemoveVehicle> {
   vehicle_history? vh;
 
   void scanQR_and_retrive_data(){
-    //TODO Mehzabin
+    // Navigator.push(context, MaterialPageRoute(builder: (context)=>ScanQR()));
     setState(() {
-      vh = new vehicle_history("001", "DHAKA-GHA-11-12432", "11:23 am", true, "1:22 pm");
+      // vh = new vehicle_history("001", "DHAKA-GHA-11-12432", "11:23 am", true, "1:22 pm");
       isQRScanned=true;
       payment_amount=150.00;
     });
@@ -44,7 +45,39 @@ class _RemoveVehicleState extends State<RemoveVehicle> {
           child: Column(
             children: [
               PageHeadingTitle(context, "CheckOut", colorbluedark),
-              ActionButton(context, colorbluedark, "Scan QR", scanQR_and_retrive_data),
+              isQRScanned? Text(""): Expanded(
+                child: MobileScanner(
+                  controller: MobileScannerController(
+                    detectionSpeed: DetectionSpeed.noDuplicates,
+                    returnImage: true,
+                  ),
+                  onDetect: (capture) {
+                    final List<Barcode> barcodes = capture.barcodes;
+                    final Uint8List? image = capture.image;
+                    for (final barcode in barcodes) {
+                      print('Barcode Found! ${barcode.rawValue}');
+                    }
+                    setState(() {
+                      registration_num= barcodes.first.rawValue;
+                      //TODO is it actually the registration number? I cannot check
+                    });
+                    if (image != null) {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: Text(
+                              barcodes.first.rawValue ?? "",
+                            ),
+                            content: Image.memory(image),
+                          );
+                        },
+                      );
+                    }
+                  },
+                ),
+              ),
+              isQRScanned? Text(""): ActionButton(context, colorbluedark, "Scan QR", scanQR_and_retrive_data),
               isQRScanned? Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

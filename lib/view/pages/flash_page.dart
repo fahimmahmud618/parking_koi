@@ -33,7 +33,7 @@ class _FlashPageState extends State<FlashPage> {
 
   @override
   void initState() {
-    Timer(Duration(seconds: 1),initiateChache);
+    Timer(Duration(seconds: 4),initiateChache);
     super.initState();
   }
   @override

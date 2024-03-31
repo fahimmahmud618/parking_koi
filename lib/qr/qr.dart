@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:qrcode/pages/generate.dart';
-import 'package:qrcode/pages/scan.dart';
+import 'package:parking_koi/qr/generate.dart';
+import 'package:parking_koi/qr/scan.dart';
 
 class QRCode extends StatefulWidget {
   const QRCode({super.key});

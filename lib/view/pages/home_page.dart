@@ -4,7 +4,6 @@ import 'package:parking_koi/view/pages/add_vehicle.dart';
 import 'package:parking_koi/view/pages/remove_vehicle.dart';
 import 'package:parking_koi/view/styles.dart';
 import 'package:parking_koi/view/widgets/appbar.dart';
-import 'package:parking_koi/view/widgets/dropdown.dart';
 import 'package:parking_koi/view/widgets/my_app_safe_page.dart';
 import 'package:parking_koi/view/widgets/vehicle_type_info_show.dart';
 

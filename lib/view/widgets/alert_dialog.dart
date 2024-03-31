@@ -2,7 +2,6 @@ import 'package:cache_manager/cache_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:parking_koi/view/pages/flash_page.dart';
 import 'package:parking_koi/view/styles.dart';
-import 'package:parking_koi/view/widgets/nameplate_of_parking_koi.dart';
 
 myAlertDialog(String title, String description, BuildContext context, Color bgcolor, Color itemcolor) {
   // Create button
