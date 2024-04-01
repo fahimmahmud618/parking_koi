@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:parking_koi/view/pages/flash_page.dart';
-
+import 'package:parking_koi/printer/print_home.dart';
 void main() {
-  runApp(const MaterialApp(
+  runApp( MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: FlashPage(),
+    home: PrintHome(),
   ));
 }
